@@ -1,5 +1,5 @@
-//Learn the basics of c++ (1.1)         
-//A 2 Z  DSA Sheet BY STRIVER
+//Learn the basics of c++ (1.1)
+
 #include <iostream>
 #include <string> //bits/stdc++.h
 
@@ -234,14 +234,79 @@ cout<<"Enter 2 numbers: "<<endl;
 cin>> num1 >> num2;
 int res = sum(num1, num2);
 cout<<res;
+//--------------------------------------------------------------------------------------------------------------------------------------------
+//PASS BY VALUE AND PASS BY REFERENCS
+
+
+//PASS BY VALUE 
+int dosomething(int num){
+    cout<<num<<endl;
+    num += 5;
+    cout<<num<<endl;
+    num += 5;
+     cout<<num<<endl;
+}    // IN PASS BY VALUE A COPY OF THE VALUE IS PASSED AND THE ORIGINAL NUMBER IS NOT AFFECTED
+
+int num = 10;
+dosomething(num);
+cout<<"Then after the porgram the final value of the number is = "<<num<<endl;
+//--------------------------------------------
+void dosomething(string s){
+    s[0]='A';
+    cout<<s<<endl;;
+} //outside the main function
+
+string s ="Farhan";
+dosomething(s);
+cout<<"But after Completion The value is: "<<s;
+//-----------------------------------------------------------------------------
+//PASS BY REFERENCE (ADDRESS) //only attach & sign
+
+void dosomething(string &s){
+    s[0]='A';
+    cout<<s<<endl;;
+} //outside the main function
+
+string s ="Farhan";
+dosomething(s);
+cout<<"But after Completion The value is: "<<s;
+
+//---------------------------------------------------
+//NOTE:- ARRAYS ARE ALWAYS PASSED BY REFERENCE
+int n = 5;
+int arr[n];
+cout<<"Enter the array values: "<<endl;
+for(int i=0; i<n; i++){
+    cin>>arr[i];
+}
+
+cout<<"The array values are: "<<endl;
+for(int i=0; i<n; i++){
+    cout<<arr[i];
+}
+//----------------------------------------------------------
+
+void dosomething(int arr[], int n){
+arr[0] += 100;
+cout<<"The value inside void function =: "<<arr[0]<<endl;
+}//outside the main function
+
+int n=5;
+int arr[n];
+cout<<"Enter the array elements: "<<endl;
+for(int i =0; i<n; i++){
+    cin>>arr[i];
+}
+for(int i =0; i<n; i++){
+    cout<<arr[i]<<endl;
+}
+dosomething(arr,n);
+
+cout<<"The array element in main function =: "<<arr[0]<<endl;
 
 
 
 
-
-
-
-
-    
+//----------------------------------------END----------------------------------------------------------------------
 return 0;
 } 
